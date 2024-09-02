@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/backiee-218200-landscape.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#09090C",
+        "foreground": "#d1ddd9",
+        "cursor": "#d1ddd9"
+    },
+    "colors": {
+        "color0": "#09090C",
+        "color1": "#EAB14E",
+        "color2": "#157589",
+        "color3": "#5B7088",
+        "color4": "#1C96A7",
+        "color5": "#24B6C7",
+        "color6": "#46C9D4",
+        "color7": "#d1ddd9",
+        "color8": "#929a97",
+        "color9": "#EAB14E",
+        "color10": "#157589",
+        "color11": "#5B7088",
+        "color12": "#1C96A7",
+        "color13": "#24B6C7",
+        "color14": "#46C9D4",
+        "color15": "#d1ddd9"
+    }
+}

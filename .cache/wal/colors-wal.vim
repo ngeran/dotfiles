@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/ngeran/Wallpapers/astronaut-with-jellyfish-2560x1600_786654-mm-90.jpg"
+let background = "#0a0c12"
+let foreground = "#a6bcc1"
+let cursor     = "#a6bcc1"
+
+" Colors
+let color0  = "#0a0c12"
+let color1  = "#533142"
+let color2  = "#31554F"
+let color3  = "#5A5B5A"
+let color4  = "#B05255"
+let color5  = "#38A65C"
+let color6  = "#B2A54C"
+let color7  = "#a6bcc1"
+let color8  = "#748387"
+let color9  = "#533142"
+let color10 = "#31554F"
+let color11 = "#5A5B5A"
+let color12 = "#B05255"
+let color13 = "#38A65C"
+let color14 = "#B2A54C"
+let color15 = "#a6bcc1"

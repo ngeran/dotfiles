@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/mount-everest-2560x1440-11019.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#030A1A",
+        "foreground": "#dfe1e1",
+        "cursor": "#dfe1e1"
+    },
+    "colors": {
+        "color0": "#030A1A",
+        "color1": "#80514E",
+        "color2": "#3C6881",
+        "color3": "#617588",
+        "color4": "#768897",
+        "color5": "#97A4AE",
+        "color6": "#B7C1C6",
+        "color7": "#dfe1e1",
+        "color8": "#9c9d9d",
+        "color9": "#80514E",
+        "color10": "#3C6881",
+        "color11": "#617588",
+        "color12": "#768897",
+        "color13": "#97A4AE",
+        "color14": "#B7C1C6",
+        "color15": "#dfe1e1"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/2560x1600-917386-Archlinux-digital-art-Linux-Arch-Linux-tech-operating-system.png",
+    "alpha": "100",
+    "special": {
+        "background": "#120615",
+        "foreground": "#f4db9d",
+        "cursor": "#f4db9d"
+    },
+    "colors": {
+        "color0": "#120615",
+        "color1": "#6E4A41",
+        "color2": "#B04B50",
+        "color3": "#FC7057",
+        "color4": "#F95F62",
+        "color5": "#FC8D52",
+        "color6": "#FCA05D",
+        "color7": "#f4db9d",
+        "color8": "#aa996d",
+        "color9": "#6E4A41",
+        "color10": "#B04B50",
+        "color11": "#FC7057",
+        "color12": "#F95F62",
+        "color13": "#FC8D52",
+        "color14": "#FCA05D",
+        "color15": "#f4db9d"
+    }
+}

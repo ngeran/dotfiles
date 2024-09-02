@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/20240816_by_nicefluffy_dhyl8e7.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#050C13",
+        "foreground": "#c4e3ed",
+        "cursor": "#c4e3ed"
+    },
+    "colors": {
+        "color0": "#050C13",
+        "color1": "#284E70",
+        "color2": "#29699D",
+        "color3": "#327AB2",
+        "color4": "#338FCE",
+        "color5": "#519DC5",
+        "color6": "#5BADD8",
+        "color7": "#c4e3ed",
+        "color8": "#899ea5",
+        "color9": "#284E70",
+        "color10": "#29699D",
+        "color11": "#327AB2",
+        "color12": "#338FCE",
+        "color13": "#519DC5",
+        "color14": "#5BADD8",
+        "color15": "#c4e3ed"
+    }
+}

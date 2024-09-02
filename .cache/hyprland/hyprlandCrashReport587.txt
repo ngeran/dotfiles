@@ -1,0 +1,203 @@
+--------------------------------------------
+   Hyprland Crash Report
+--------------------------------------------
+Who tried dividing by zero?!
+
+Hyprland received signal 11(SEGV)
+Version: f634b9e61af7dae0ca70379bd207eea45bb417d1
+Tag: v0.42.0-58-gf634b9e6
+Date: Thu Aug 22 08:28:01 2024
+Flags:
+
+System info:
+	System name: Linux
+	Node name: arch-linux
+	Release: 6.10.6-arch1-1
+	Version: #1 SMP PREEMPT_DYNAMIC Mon, 19 Aug 2024 17:02:39 +0000
+
+GPU:
+	00:02.0 VGA compatible controller [0300]: Intel Corporation Haswell-ULT Integrated Graphics Controller [8086:0a2e] (rev 09) (prog-if 00 [VGA controller])
+
+
+os-release:
+	NAME="Arch Linux"
+	PRETTY_NAME="Arch Linux"
+	ID=arch
+	BUILD_ID=rolling
+	ANSI_COLOR="38;2;23;147;209"
+	HOME_URL="https://archlinux.org/"
+	DOCUMENTATION_URL="https://wiki.archlinux.org/"
+	SUPPORT_URL="https://bbs.archlinux.org/"
+	BUG_REPORT_URL="https://gitlab.archlinux.org/groups/archlinux/-/issues"
+	PRIVACY_POLICY_URL="https://terms.archlinux.org/docs/privacy-policy/"
+	LOGO=archlinux-logo
+Backtrace:
+	# | Hyprland(_Z12getBacktracev+0x46) [0x64d05569f9a6]
+		getBacktrace()
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/helpers/MiscFunctions.cpp:791
+	#1 | Hyprland(_ZN13CrashReporter18createAndSaveCrashEi+0xabe) [0x64d055625d3e]
+		CrashReporter::createAndSaveCrash(int)
+		/usr/include/c++/14.2.1/bits/basic_string.h:632
+	#2 | Hyprland(_Z25handleUnrecoverableSignali+0x5c) [0x64d0555ba44c]
+		handleUnrecoverableSignal(int)
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/Compositor.cpp:73
+	#3 | /usr/lib/libc.so.6(+0x3d1d0) [0x7ac256f5d1d0]
+		??
+		??:0
+	#4 | /usr/lib/libaquamarine.so.2(+0x311af) [0x7ac257c7b1af]
+		??
+		??:0
+	#5 | Hyprland(_ZN15CPointerManager17setHWCursorBufferEN9Hyprutils6Memory14CSharedPointerINS_20SMonitorPointerStateEEENS2_IN10Aquamarine7IBufferEEE+0x2b4) [0x64d0556f23c4]
+		CPointerManager::setHWCursorBuffer(Hyprutils::Memory::CSharedPointer<CPointerManager::SMonitorPointerState>, Hyprutils::Memory::CSharedPointer<Aquamarine::IBuffer>)
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/managers/PointerManager.cpp:395 (discriminator 1)
+	#6 | Hyprland(_ZN15CPointerManager21attemptHardwareCursorEN9Hyprutils6Memory14CSharedPointerINS_20SMonitorPointerStateEEE+0x1fe) [0x64d0556f4bde]
+		CPointerManager::attemptHardwareCursor(Hyprutils::Memory::CSharedPointer<CPointerManager::SMonitorPointerState>)
+		/usr/include/hyprutils/memory/SharedPtr.hpp:177
+	#7 | Hyprland(_ZN15CPointerManager19updateCursorBackendEv+0x39d) [0x64d0556f51bd]
+		CPointerManager::updateCursorBackend()
+		/usr/include/hyprutils/memory/SharedPtr.hpp:177
+	#8 | Hyprland(_ZN15CPointerManager15setCursorBufferEN9Hyprutils6Memory14CSharedPointerIN10Aquamarine7IBufferEEERKNS0_4Math8Vector2DERKf+0xab) [0x64d0556eea3b]
+		CPointerManager::setCursorBuffer(Hyprutils::Memory::CSharedPointer<Aquamarine::IBuffer>, Hyprutils::Math::Vector2D const&, float const&)
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/managers/PointerManager.cpp:173
+	#9 | Hyprland(_ZN14CCursorManager15setCursorBufferEN9Hyprutils6Memory14CSharedPointerI13CCursorBufferEERKNS0_4Math8Vector2DERKf+0x95) [0x64d0556ce8f5]
+		CCursorManager::setCursorBuffer(Hyprutils::Memory::CSharedPointer<CCursorBuffer>, Hyprutils::Math::Vector2D const&, float const&)
+		/usr/include/hyprutils/memory/SharedPtr.hpp:177
+	#1 | Hyprland(_ZN14CCursorManager17setCursorFromNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x158) [0x64d0556d05d8]
+		CCursorManager::setCursorFromName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+		/usr/include/hyprutils/memory/SharedPtr.hpp:177
+	#11 | Hyprland(_ZN14CCursorManager11updateThemeEv+0x153) [0x64d0556d1393]
+		CCursorManager::updateTheme()
+		/usr/include/c++/14.2.1/bits/basic_string.h:228
+	#12 | Hyprland(+0x2b5548) [0x64d0556d1548]
+		std::_Function_handler<void (void*, SCallbackInfo&, std::any), CCursorManager::CCursorManager()::{lambda(void*, SCallbackInfo&, std::any)#1}>::_M_invoke(std::_Any_data const&, void*&&, SCallbackInfo&, std::any&&)
+		/usr/include/c++/14.2.1/any:329
+	#13 | Hyprland(_ZN18CHookSystemManager4emitEPSt6vectorI14SCallbackFNPtrSaIS1_EER13SCallbackInfoSt3any+0x48c) [0x64d0556d45cc]
+		CHookSystemManager::emit(std::vector<SCallbackFNPtr, std::allocator<SCallbackFNPtr> >*, SCallbackInfo&, std::any)
+		/usr/include/c++/14.2.1/any:329
+	#14 | Hyprland(_ZN13CHyprRenderer16applyMonitorRuleEP8CMonitorP12SMonitorRuleb+0xb0d) [0x64d055879f3d]
+		CHyprRenderer::applyMonitorRule(CMonitor*, SMonitorRule*, bool)
+		/usr/include/c++/14.2.1/any:329
+	#15 | Hyprland(_ZN8CMonitor9onConnectEb+0xc4f) [0x64d05569dd1f]
+		CMonitor::onConnect(bool)
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/helpers/Monitor.cpp:165
+	#16 | Hyprland(_ZN11CCompositor12onNewMonitorEN9Hyprutils6Memory14CSharedPointerIN10Aquamarine7IOutputEEE+0x2ad) [0x64d0555dcaed]
+		CCompositor::onNewMonitor(Hyprutils::Memory::CSharedPointer<Aquamarine::IOutput>)
+		/usr/include/hyprutils/memory/SharedPtr.hpp:242 (discriminator 1)
+	#17 | Hyprland(+0x1c1068) [0x64d0555dd068]
+		std::_Function_handler<void (void*, std::any), CCompositor::initAllSignals()::{lambda(void*, std::any)#1}>::_M_invoke(std::_Any_data const&, void*&&, std::any&&) [clone .lto_priv.0]
+		/usr/include/hyprutils/memory/SharedPtr.hpp:177
+	#18 | /usr/lib/libhyprutils.so.1(_ZN9Hyprutils6Signal21CStaticSignalListener4emitESt3any+0x66) [0x7ac257a4edc6]
+		??
+		??:0
+	#19 | /usr/lib/libhyprutils.so.1(_ZN9Hyprutils6Signal7CSignal4emitESt3any+0x59e) [0x7ac257a4f3be]
+		??
+		??:0
+	#2 | /usr/lib/libaquamarine.so.2(_ZN10Aquamarine13SDRMConnector7connectEP17_drmModeConnector+0x133d) [0x7ac257cedcbd]
+		std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() [clone .cold]
+		/usr/include/c++/14.2.1/bits/locale_classes.tcc:207
+	#21 | /usr/lib/libaquamarine.so.2(_ZN10Aquamarine11CDRMBackend14scanConnectorsEv+0xc10) [0x7ac257ce8500]
+		CWpLinuxDrmSyncobjManagerV1::setImportTimeline(std::function<void (CWpLinuxDrmSyncobjManagerV1*, unsigned int, int)>) [clone .cold]
+		/usr/include/c++/14.2.1/bits/std_function.h:244
+	#22 | /usr/lib/libaquamarine.so.2(+0xa96f4) [0x7ac257cf36f4]
+		CConfigManager::setDefaultAnimationVars() [clone .cold]
+		/usr/include/c++/14.2.1/bits/basic_string.h:809
+	#23 | /usr/lib/libhyprutils.so.1(_ZN9Hyprutils6Signal15CSignalListener4emitESt3any+0x5f) [0x7ac257a4ec9f]
+		??
+		??:0
+	#24 | /usr/lib/libhyprutils.so.1(_ZN9Hyprutils6Signal7CSignal4emitESt3any+0x1ee) [0x7ac257a4f00e]
+		??
+		??:0
+	#25 | /usr/lib/libaquamarine.so.2(_ZN10Aquamarine8CSession18dispatchUdevEventsEv+0x4c1) [0x7ac257cc19b1]
+		??
+		??:0
+	#26 | Hyprland(+0x2fe8b6) [0x64d05571a8b6]
+		aquamarineFDWrite(int, unsigned int, void*)
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/managers/eventLoop/EventLoopManager.cpp:43
+	#27 | /usr/lib/libwayland-server.so.0(wl_event_loop_dispatch+0x1f2) [0x7ac257c230a2]
+		??
+		??:0
+	#28 | /usr/lib/libwayland-server.so.0(wl_display_run+0x2f) [0x7ac257c2510f]
+		??
+		??:0
+	#29 | Hyprland(_ZN17CEventLoopManager9enterLoopEv+0x26d) [0x64d05571cc8d]
+		CEventLoopManager::enterLoop()
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/managers/eventLoop/EventLoopManager.cpp:55 (discriminator 1)
+	#3 | Hyprland(main+0xc14) [0x64d0555529f4]
+		main
+		/usr/src/debug/hyprland-git/Hyprland/build/../src/main.cpp:159 (discriminator 1)
+	#31 | /usr/lib/libc.so.6(+0x25e08) [0x7ac256f45e08]
+		??
+		??:0
+	#32 | /usr/lib/libc.so.6(__libc_start_main+0x8c) [0x7ac256f45ecc]
+		??
+		??:0
+	#33 | Hyprland(_start+0x25) [0x64d055581485]
+		_start
+		??:?
+
+
+Log tail:
+[LOG] [AQ] GBM: Allocated a new buffer with size [Vector2D: x: 1920, y: 1080] and format XB24 with modifier 72057594037927937 aka X_TILED
+[LOG] [AQ] Swapchain: Reconfigured a swapchain to [Vector2D: x: 1920, y: 1080] XB24 of length 2
+[ERR] [AQ] drm: No CRTC attached to output
+[ERR] output HDMI-A-2 failed basic test on format DRM_FORMAT_XBGR8888
+[ERR] [AQ] drm: No CRTC attached to output
+[ERR] output HDMI-A-2 failed basic test on format DRM_FORMAT_INVALID
+[ERR] [AQ] drm: No CRTC attached to output
+[ERR] Couldn't commit output named HDMI-A-2
+[LOG] Monitor HDMI-A-2 -> destroyed all render data
+[LOG] arrangeMonitors: 2 to arrange
+[LOG] arrangeMonitors: eDP-1 auto [0, 0]
+[LOG] arrangeMonitors: HDMI-A-2 auto [-1, -1]
+[LOG] arrangeMonitors: eDP-1 xwayland [0, 0]
+[LOG] arrangeMonitors: HDMI-A-2 xwayland [2560, 0]
+[LOG] Monitor HDMI-A-2 data dump: res 1920x1080@60.00Hz, scale 1.00, transform 0, pos 1280x0, 10b 0
+[LOG] XCursor scanning theme Bibata-Modern-Ice
+[LOG] XCursor using theme path /usr/share/icons/Bibata-Modern-Ice/cursors
+[LOG] XCursor parsing index.theme /usr/share/icons/Bibata-Modern-Ice/index.theme
+[LOG] XCursor theme Bibata-Modern-Ice inherits "hicolor"
+[LOG] XCursor scanning theme "hicolor"
+[LOG] XCursor already has a shape default loaded, skipping
+[LOG] XCursor already has a shape context-menu loaded, skipping
+[LOG] XCursor already has a shape help loaded, skipping
+[LOG] XCursor already has a shape pointer loaded, skipping
+[LOG] XCursor already has a shape progress loaded, skipping
+[LOG] XCursor already has a shape wait loaded, skipping
+[LOG] XCursor already has a shape cell loaded, skipping
+[LOG] XCursor already has a shape crosshair loaded, skipping
+[LOG] XCursor already has a shape text loaded, skipping
+[LOG] XCursor already has a shape vertical-text loaded, skipping
+[LOG] XCursor already has a shape alias loaded, skipping
+[LOG] XCursor already has a shape copy loaded, skipping
+[LOG] XCursor already has a shape move loaded, skipping
+[LOG] XCursor already has a shape no-drop loaded, skipping
+[LOG] XCursor already has a shape not-allowed loaded, skipping
+[LOG] XCursor already has a shape grab loaded, skipping
+[LOG] XCursor already has a shape grabbing loaded, skipping
+[LOG] XCursor already has a shape e-resize loaded, skipping
+[LOG] XCursor already has a shape n-resize loaded, skipping
+[LOG] XCursor already has a shape ne-resize loaded, skipping
+[LOG] XCursor already has a shape nw-resize loaded, skipping
+[LOG] XCursor already has a shape s-resize loaded, skipping
+[LOG] XCursor already has a shape se-resize loaded, skipping
+[LOG] XCursor already has a shape sw-resize loaded, skipping
+[LOG] XCursor already has a shape w-resize loaded, skipping
+[LOG] XCursor already has a shape ew-resize loaded, skipping
+[LOG] XCursor already has a shape ns-resize loaded, skipping
+[LOG] XCursor already has a shape nesw-resize loaded, skipping
+[LOG] XCursor already has a shape nwse-resize loaded, skipping
+[LOG] XCursor already has a shape col-resize loaded, skipping
+[LOG] XCursor already has a shape row-resize loaded, skipping
+[LOG] XCursor already has a shape all-scroll loaded, skipping
+[LOG] XCursor already has a shape zoom-in loaded, skipping
+[LOG] XCursor already has a shape zoom-out loaded, skipping
+[LOG] [AQ] drm: Cursor buffer imported into KMS with id 115
+[LOG] [AQ] GBM: Automatically selected format AR24 for new GBM buffer
+[LOG] [AQ] GBM: Buffer is marked as multigpu, forcing linear
+[LOG] [AQ] GBM: Allocated a new buffer with size [Vector2D: x: 256, y: 256] and format AR24 with modifier 0 aka LINEAR
+[LOG] [AQ] GBM: Automatically selected format AR24 for new GBM buffer
+[LOG] [AQ] GBM: Buffer is marked as multigpu, forcing linear
+[LOG] [AQ] GBM: Allocated a new buffer with size [Vector2D: x: 256, y: 256] and format AR24 with modifier 0 aka LINEAR
+[LOG] [AQ] Swapchain: Reconfigured a swapchain to [Vector2D: x: 256, y: 256] AR24 of length 2
+[LOG] Shaders initialized successfully.
+[LOG] [AQ] drm: Cursor buffer imported into KMS with id 116

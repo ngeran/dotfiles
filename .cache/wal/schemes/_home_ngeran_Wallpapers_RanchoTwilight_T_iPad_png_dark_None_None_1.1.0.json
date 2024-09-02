@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/RanchoTwilight_T_iPad.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0D2A35",
+        "foreground": "#c3bcb2",
+        "cursor": "#c3bcb2"
+    },
+    "colors": {
+        "color0": "#0D2A35",
+        "color1": "#504645",
+        "color2": "#6E4E45",
+        "color3": "#914529",
+        "color4": "#9F5529",
+        "color5": "#DF6710",
+        "color6": "#F58A0C",
+        "color7": "#c3bcb2",
+        "color8": "#88837c",
+        "color9": "#504645",
+        "color10": "#6E4E45",
+        "color11": "#914529",
+        "color12": "#9F5529",
+        "color13": "#DF6710",
+        "color14": "#F58A0C",
+        "color15": "#c3bcb2"
+    }
+}

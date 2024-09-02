@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/ai-3.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#120d0e",
+        "foreground": "#a8d3d5",
+        "cursor": "#a8d3d5"
+    },
+    "colors": {
+        "color0": "#120d0e",
+        "color1": "#545E62",
+        "color2": "#97654A",
+        "color3": "#C1986F",
+        "color4": "#3B7484",
+        "color5": "#4D7A86",
+        "color6": "#649198",
+        "color7": "#a8d3d5",
+        "color8": "#759395",
+        "color9": "#545E62",
+        "color10": "#97654A",
+        "color11": "#C1986F",
+        "color12": "#3B7484",
+        "color13": "#4D7A86",
+        "color14": "#649198",
+        "color15": "#a8d3d5"
+    }
+}

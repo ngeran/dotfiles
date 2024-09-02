@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/fabrizio-conti-UtDX2hUydf0-unsplash.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0e2236",
+        "foreground": "#d5d8db",
+        "cursor": "#d5d8db"
+    },
+    "colors": {
+        "color0": "#0e2236",
+        "color1": "#839CB3",
+        "color2": "#8AA5BB",
+        "color3": "#A7B2BD",
+        "color4": "#91ABC2",
+        "color5": "#AFB9C4",
+        "color6": "#C0BFC5",
+        "color7": "#d5d8db",
+        "color8": "#959799",
+        "color9": "#839CB3",
+        "color10": "#8AA5BB",
+        "color11": "#A7B2BD",
+        "color12": "#91ABC2",
+        "color13": "#AFB9C4",
+        "color14": "#C0BFC5",
+        "color15": "#d5d8db"
+    }
+}

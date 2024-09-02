@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/admiring-the-night-sky-on-the-lake-promenade-2560x1600_579487-mm-90.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#010315",
+        "foreground": "#ede3cd",
+        "cursor": "#ede3cd"
+    },
+    "colors": {
+        "color0": "#010315",
+        "color1": "#D6A172",
+        "color2": "#076C8A",
+        "color3": "#5B7787",
+        "color4": "#48969A",
+        "color5": "#A1A897",
+        "color6": "#C7BCA1",
+        "color7": "#ede3cd",
+        "color8": "#a59e8f",
+        "color9": "#D6A172",
+        "color10": "#076C8A",
+        "color11": "#5B7787",
+        "color12": "#48969A",
+        "color13": "#A1A897",
+        "color14": "#C7BCA1",
+        "color15": "#ede3cd"
+    }
+}

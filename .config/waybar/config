@@ -1,0 +1,383 @@
+//  __  __           _       _
+// |  \/  | ___   __| |_   _| | ___  ___
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// | |  | | (_) | (_| | |_| | |  __/\__ \
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+//
+//
+
+/* -----------------------------------------------------
+ * Position Modules 
+ * ----------------------------------------------------- */
+
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "modules-left": ["custom/appmenu",
+                    "group/settings",
+                    "group/quicklinks"
+                ],
+
+    "modules-center": ["hyprland/workspaces"],
+    
+    "modules-right": [  "pulseaudio", 
+                        "backlight", 
+                        "bluetooth", 
+                        "battery",
+                        "network",
+                        "group/hardware",
+                        "custom/power", 
+                        "clock"
+                    ],
+
+
+	"custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        "format": "",
+    },
+    //==========================================
+    // Workspaces
+    //==========================================
+    "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+     // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+
+    // Hyprland Window
+    "hyprland/window": {
+        "rewrite": {
+            "(.*) - Brave": "$1",
+            "(.*) - Chromium": "$1"
+        },
+        "separate-outputs": true
+    },
+     //==========================================
+    // Wmpd
+    //==========================================
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+     //==========================================
+    // Idle
+    //==========================================
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+     //==========================================
+    // Tray
+    //==========================================
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    //==========================================
+    // Wofi Application Launcher
+    //==========================================
+    "custom/appmenu": {
+        "format": "Apps",
+        "on-click": "rofi -show drun",
+        //"on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "tooltip": false
+    },
+    //==========================================
+    // Group Hardware
+    //==========================================
+    "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": ["custom/system", "disk", "cpu", "memory"]
+    },
+    //==========================================
+    // Wallpaper
+    //==========================================
+    "custom/wallpaper": {
+    "format": "",
+    "on-click": "waypaper",
+    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+    "tooltip-format": "Select a wallpaper"
+    },
+    //==========================================
+    // Waybar Themes
+    //==========================================
+    "custom/waybarthemes": {
+    "format": "",
+    "on-click": "~/.config/waybar/themeswitcher.sh",
+    "tooltip-format": "Switch between Dark and White Modes"
+    },
+    //==========================================
+     // Settings
+     //==========================================
+    "custom/settings": {
+    "format": "",
+    //"on-click": "~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
+    "tooltip-format": "Settings"
+    },
+    //==========================================
+     // Group Settings
+     //==========================================
+    "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings",
+      "custom/waybarthemes",
+      "custom/wallpaper"
+    ]
+  },
+    //=========================================
+   // System
+   //=========================================
+   "custom/system": {
+    "format": "",
+    "tooltip": false
+     },
+    //==========================================
+    // Clock
+    //==========================================
+    "clock": {
+    "format": "{:%H:%M %a}",
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    // START CLOCK FORMAT
+    "format-alt": "{:%Y-%m-%d}"
+    // END CLOCK FORMAT
+    },
+    //==========================================
+    // Cpu
+    //==========================================
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    //==========================================
+    // Memory
+    //==========================================
+    "memory": {
+        "format": "{}% "
+    },
+    //==========================================
+    // Disk
+    //==========================================
+    "disk": {
+    	"format": "{}% 🖴"
+    },
+    //==========================================
+    // Temperature
+    //==========================================
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    //==========================================
+    // Bluetooth
+    //==========================================
+    "bluetooth": {
+		"format": " {status}",
+		"format-disabled": " off",
+		"format-connected": " {num_connections}",
+		"tooltip-format": "{device_alias}",
+		"tooltip-format-connected": " {device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"on-click": "bluetooth toggle"
+	},
+    //==========================================
+    // Backlight 
+    //==========================================
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    //==========================================
+    // Battery
+    //==========================================
+    "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{icon}  {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [" ", " ", " ", " ", " "]
+    },
+    //==========================================
+    // Network
+    //==========================================
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "   {signalStrength}%",
+        "format-ethernet": "  {ifname}",
+        "format-disconnected": "Disconnected ⚠",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
+        //"on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui",
+        //"on-click-right": "~/.config/ml4w/settings/networkmanager.sh"
+    },
+    //==========================================
+    // Audio
+    //==========================================
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        //"format-bluetooth": "{volume}% {icon} {format_source}",
+        //"format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        //"format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    //==========================================
+    // Custom Power 
+    //==========================================
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "on-click": "wlogout --protocol layer-shell"
+    },
+    //==========================================
+    // Custom Media 
+    //==========================================
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    //==========================================
+    // Quick Links 
+    //==========================================
+    "custom/quicklink1": {
+        "format": "",
+        "on-click": "thorium-browser",
+        "tooltip-format": "Open thromium"
+    }, 
+    "custom/quicklink2": {
+        "format": "",
+        "on-click": "firefox",
+        "tooltip-format": "Open Firefox"
+    },
+    "custom/quicklink3": {
+        "format": "",
+        "on-click": "thunar",
+        "tooltip-format": "Open filemanager"
+    }, 
+    "custom/quicklink4": {
+        "format": "",
+        "on-click": "waypaper",
+        "tooltip-format": "Change Wallpaper"
+    }, 
+    "custom/quicklink5": {
+        "format": "",
+        "on-click": "kitty",
+        "tooltip-format": "Change Kitty"
+    }, 
+    "custom/quicklinkempty": {
+    }, 
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/quicklink1",
+           // "custom/quicklink2",
+            "custom/quicklink3",
+            //"custom/quicklink4",
+            "custom/quicklink5",
+            "custom/quicklinkempty"
+        ]
+    }
+}
+

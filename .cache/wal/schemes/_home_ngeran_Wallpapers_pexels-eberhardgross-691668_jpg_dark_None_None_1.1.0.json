@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ngeran/Wallpapers/pexels-eberhardgross-691668.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#12181b",
+        "foreground": "#dedfe1",
+        "cursor": "#dedfe1"
+    },
+    "colors": {
+        "color0": "#12181b",
+        "color1": "#9A9EA2",
+        "color2": "#9F9FA4",
+        "color3": "#9DA2A6",
+        "color4": "#A5A8AC",
+        "color5": "#B9BCC2",
+        "color6": "#BDC2C6",
+        "color7": "#dedfe1",
+        "color8": "#9b9c9d",
+        "color9": "#9A9EA2",
+        "color10": "#9F9FA4",
+        "color11": "#9DA2A6",
+        "color12": "#A5A8AC",
+        "color13": "#B9BCC2",
+        "color14": "#BDC2C6",
+        "color15": "#dedfe1"
+    }
+}
